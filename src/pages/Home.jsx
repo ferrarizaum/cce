@@ -3,13 +3,6 @@ import { DndContext } from "@dnd-kit/core";
 import Card from "../components/Card";
 import Box from "../components/Box";
 
-let taskArray = [
-  {
-    id: 1,
-    name: "example",
-  },
-];
-
 const Home = () => {
   const [isDropped, setIsDropped] = useState(false);
   const draggableMarkup = <Card />;
