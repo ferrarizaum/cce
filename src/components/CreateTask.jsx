@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { toast } from "react-hot-toast";
 
 let id = 1;
 
@@ -15,12 +16,20 @@ const CreateTask = ({ tasks, setTasks }) => {
     e.preventDefault();
 
     if (task.name.length < 3) {
-      return;
+      return toast.error("Task must have more than 3 characters");
     }
     setTasks((prev) => {
       const list = [...prev, task];
       localStorage.setItem("tasks", JSON.stringify(list));
       return list;
+    });
+
+    toast.success("Task created");
+
+    setTask({
+      id: "",
+      name: "",
+      status: "todo",
     });
   };
 
