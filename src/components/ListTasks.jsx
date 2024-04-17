@@ -21,7 +21,13 @@ const ListTasks = ({ tasks, setTasks }) => {
 
   return (
     <>
-      <div style={{ display: "flex", marginRight: "18px" }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-evenly",
+          margin: "2em",
+        }}
+      >
         {statuses.map((status, index) => {
           return (
             <Section
@@ -53,15 +59,16 @@ const Section = ({ status, tasks, setTasks, todos, inProgress, closed }) => {
 
   let text = "Todo";
   let tasksToMap = todos;
+  let bg = "";
 
   if (status === "inprogress") {
     text = "In Progress";
-    //bacjgroundcolor
+    bg = "green";
     tasksToMap = inProgress;
   }
   if (status === "closed") {
     text = "Closed";
-    //bacjgroundcolor
+    bg = "red";
     tasksToMap = closed;
   }
 
@@ -85,12 +92,12 @@ const Section = ({ status, tasks, setTasks, todos, inProgress, closed }) => {
         <Header
           text={text}
           count={tasksToMap.length} /* backgroundColor={background color }*/
+          bg={bg}
         />
         {tasksToMap.length > 0 &&
           tasksToMap.map((task) => (
             <Task key={task.id} task={task} tasks={tasks} setTasks={setTasks} />
           ))}
-        List
       </div>
     </>
   );
@@ -99,8 +106,10 @@ const Section = ({ status, tasks, setTasks, todos, inProgress, closed }) => {
 const Header = ({ text, bg, count }) => {
   return (
     <>
-      <div>{text}</div>
-      <div>{count}</div>
+      <div style={{ backgroundColor: bg }}>
+        <div>{text}</div>
+        <div>{count}</div>
+      </div>
     </>
   );
 };
