@@ -19,12 +19,17 @@ const Task = ({ task, tasks, setTasks }) => {
   };
   return (
     <>
-      <div style={{ display: "flex", flexDirection: "column" }} ref={drag}>
+      <div className="task" ref={drag}>
         <div>
           <p>{task.name}</p>
         </div>
         <div>
-          <button onClick={() => handleRemove(task.id)}>Delete Task</button>
+          <button
+            className="button-delete"
+            onClick={() => handleRemove(task.id)}
+          >
+            Delete Task
+          </button>
         </div>
       </div>
     </>

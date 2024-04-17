@@ -4,9 +4,8 @@ const Header = ({ text, bg, count }) => {
   return (
     <>
       <div
+        className="header"
         style={{
-          display: "flex",
-          justifyContent: "center",
           backgroundColor: bg,
         }}
       >

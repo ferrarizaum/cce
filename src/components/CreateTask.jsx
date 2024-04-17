@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { toast } from "react-hot-toast";
-
 let id = 1;
 
 const CreateTask = ({ tasks, setTasks }) => {
@@ -33,7 +32,7 @@ const CreateTask = ({ tasks, setTasks }) => {
 
   return (
     <>
-      <div>
+      <div className="teste">
         <form onSubmit={handleSubmit}>
           <div
             style={{
@@ -44,6 +43,7 @@ const CreateTask = ({ tasks, setTasks }) => {
           >
             <div>
               <input
+                className="input"
                 type="text"
                 value={task.name}
                 onChange={(e) =>
@@ -52,7 +52,7 @@ const CreateTask = ({ tasks, setTasks }) => {
               />
             </div>
             <div>
-              <button>Create Task</button>
+              <button className="button-create">Create Task</button>
             </div>
           </div>
         </form>
