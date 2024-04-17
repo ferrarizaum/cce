@@ -125,7 +125,7 @@ const Task = ({ task, tasks, setTasks }) => {
     <>
       <div ref={drag}>
         <p>{task.name}</p>
-        <button onClick={() => handleRemove(task.id)}></button>
+        <button onClick={() => handleRemove(task.id)}>Delete Task</button>
       </div>
     </>
   );

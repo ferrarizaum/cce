@@ -35,14 +35,30 @@ const CreateTask = ({ tasks, setTasks }) => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={task.name}
-          onChange={(e) => setTask({ ...task, id: id++, name: e.target.value })}
-        />
-        <button></button>
-      </form>
+      <div>
+        <form onSubmit={handleSubmit}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <div>
+              <input
+                type="text"
+                value={task.name}
+                onChange={(e) =>
+                  setTask({ ...task, id: id++, name: e.target.value })
+                }
+              />
+            </div>
+            <div>
+              <button>Create Task</button>
+            </div>
+          </div>
+        </form>
+      </div>
     </>
   );
 };
